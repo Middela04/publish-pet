@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --primary: #6366f1;
+  --primary-hover: #4f46e5;
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --muted: #94a3b8;
+  --card: #ffffff;
+  --border: #e2e8f0;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+/* Score ring animation */
+@keyframes score-fill {
+  from {
+    stroke-dashoffset: 283;
+  }
+}
+
+.score-ring {
+  animation: score-fill 1s ease-out forwards;
+}
+
+/* Suggestion diff highlighting */
+.diff-removed {
+  background-color: #fecaca;
+  text-decoration: line-through;
+  color: #991b1b;
+}
+
+.diff-added {
+  background-color: #bbf7d0;
+  color: #166534;
+}
